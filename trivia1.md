@@ -8,3 +8,6 @@ Write, in pseudo-code, an efficient way of doing the following conversions and e
   
   3. Logical dot anotation
   "Reverse this sentence." => "Sentence this reverse."
+  
+  4. Something more tricky
+  "aaagggaaaiinnnnn" => "3a3g3a2i5n"
