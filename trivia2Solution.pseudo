@@ -1,0 +1,17 @@
+# Write the pseudocode of a function, which takes as input a String, and returns True if it is palindrome, or False otherwise.
+#
+# > A palindrome is a word, phrase, or sequence that reads the same backwards as forwards
+#
+# Example:
+# *  "savvas" => true
+# *  "pambos" => false
+# O(N): The iteration will be executed once and the execution time will be proportional to the input length
+
+Function isPalindrome (String word)
+    word = word.ToLower
+    reverseWord = ""
+    FOR each char in word
+        reverseWord = char & reverseWord
+    END FOR|
+    return reverseWord == word
+End

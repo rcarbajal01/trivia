@@ -1,0 +1,62 @@
+# 1. Words only
+# "Reverse this sentence" => "sentence this Reverse"
+# O(N): The iteration will be executed once and the execution time will be proportional to the input length
+
+Function ReverseSentence (String sentence)
+    Assign sentenceArray = split sentence with " "
+    reverseSentece = ""
+    FOR each word in sentenceArray 
+        reverseSentence = word & " " & reverseSentence
+    END FOR
+    Return  reverseSentence
+End
+
+#2. Logical case
+#"Reverse this sentence" => "Sentence this reverse"
+# O(N): The iteration will be executed once and the execution time will be proportional to the input length
+
+Function ReverseSentenceLogicalCase (String sentence)
+    sentence = sentence.ToLowerCase
+    sentenceArray = split sentence with " "
+    sentenceArray[sentenceArray.Length -1] = char.ToUpper(sentenceArray[sentenceArray.Length - 1][0]) & sentenceArray[sentenceArray.Length - 1].Substring(1)
+    reverseSentece = ""
+    FOR each word in sentenceArray 
+        reverseSentence = word & " " & reverseSentence
+    END FOR
+    Return  reverseSentence
+End
+
+#3. Logical dot anotation
+#"Reverse this sentence." => "Sentence this reverse."
+# O(N): The iteration will be executed once and the execution time will be proportional to the input length
+
+Function ReverseSentenceLogicalCaseDot (String sentence)
+    sentence = sentence.ToLowerCase
+    sentenceArray = split sentence with " "
+    sentenceArray[sentenceArray.Length -1] = char.ToUpper(sentenceArray[sentenceArray.Length - 1][0]) & sentenceArray[sentenceArray.Length - 1].Substring(1)
+    reverseSentece = ""
+    FOR each word in sentenceArray 
+        reverseSentence = word & " " & reverseSentence
+    END FOR
+    Return  reverseSentence & "."
+End
+
+# 4. Something more tricky
+# "aaagggaaaiinnnnn" => "3a3g3a2i5n"
+# O(N): The iteration will be executed once and the execution time will be proportional to the input length
+
+Function countChars (String word)
+    charsCounter = ""
+    prevChar = ""
+    counter = 0
+    FOR each char in word               
+        IF char != prevChar and prevChar != ""                        
+            charsCounter += counter + char
+            counter = 0
+        END IF
+        prevChar = char;
+        counter ++ 
+    END FOR
+    charsCounter += counter + char
+    return charsCounter
+End
